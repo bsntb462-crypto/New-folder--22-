@@ -568,6 +568,8 @@ footer .social-links{
     transform: scale(1.08) !important;
   }
 }
+</style>
+
 <style id="user-requested-fixes-1">
 /* 1) تكبير أيقونات الفوتر (فيسبوك/إيميل) شوية في الشاشات الصغيرة */
 @media(max-width:700px){
@@ -586,10 +588,16 @@ footer .social-links{
   .phone-showcase img{transform:translateX(-8px) !important}
 }
 
-/* 4) إصلاح صورة الشوكيز في نسخة الموبايل (كانت طالعة بره الإطار) */
+/* 4) صورة الشوكيز في نسخة الموبايل: عرض الصفحة بالكامل من غير فراغ على الجنبين */
 @media(max-width:700px){
-  .phone-showcase{min-height:330px;justify-content:center;overflow:visible}
-  .phone-showcase img{width:82% !important;max-width:340px !important;margin:0 auto;transform:translateX(0) !important}
+  .phone-showcase{padding:0;justify-content:center;overflow:hidden}
+  .phone-showcase img{
+    width:100vw !important;
+    max-width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
+    transform:none !important;
+  }
 }
 
 /* 5) قسم "كثير منا يمر بنفس التجربة": توسيط آخر عنصر (تراكم الأقساط) في الموبايل */
